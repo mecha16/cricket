@@ -1,0 +1,26 @@
+import random
+
+def cricket_game():
+    print("Welcome to the Cricket Game!")
+    print("You are going to bat against the computer.")
+    
+    total_score = 0
+    is_out = False
+
+    while not is_out:
+        player_choice = int(input("Enter a run (1-6): "))  # Player chooses a run
+        computer_choice = random.randint(1, 6)  # Computer randomly chooses a run
+
+        print(f"Computer chose: {computer_choice}")
+
+        if player_choice == computer_choice:
+            print("You're OUT!")
+            is_out = True
+        else:
+            total_score += player_choice
+            print(f"Your score: {total_score}")
+
+    print(f"Game Over! Your final score is: {total_score}")
+
+# Start the game
+cricket_game()
