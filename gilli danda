@@ -1,0 +1,30 @@
+import random
+
+def gilli_danda_game():
+    print("Welcome to the Gilli Danda Game!")
+    print("Try to hit the gilli as far as you can!")
+
+    score = 0
+    attempts = 5  # Number of attempts to hit the gilli
+
+    for attempt in range(1, attempts + 1):
+        print(f"\nAttempt {attempt}:")
+        input("Press Enter to hit the gilli...")
+
+        hit_strength = random.randint(1, 10)  # Random strength of hit
+        distance = hit_strength * random.randint(5, 10)  # Distance based on hit strength
+        print(f"You hit the gilli with a strength of {hit_strength}!")
+
+        if hit_strength >= 8:
+            print(f"Great shot! The gilli traveled {distance} meters!")
+        elif hit_strength >= 4:
+            print(f"Good shot! The gilli traveled {distance} meters.")
+        else:
+            print(f"Oops! Weak shot. The gilli only traveled {distance} meters.")
+
+        score += distance
+
+    print(f"\nGame Over! Your total score is: {score} meters")
+
+# Start the game
+gilli_danda_game()
